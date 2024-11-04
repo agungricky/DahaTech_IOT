@@ -1,0 +1,625 @@
+$green: #677d39;
+$white: #ffffff;
+$button: #87a942;
+
+body {
+    // ================== LOADING SCREEN =========================//
+    background-color: $white;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    .container {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+    }
+
+    .logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 20%;
+    }
+
+    .background {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .hijau {
+        width: 100%;
+        height: 50%;
+        background-color: $green;
+    }
+
+    .putih {
+        width: 100%;
+        height: 50%;
+        background-color: $white;
+    }
+
+    #slogan {
+        width: 100%;
+        position: absolute;
+        bottom: 40px;
+        color: black;
+        text-align: center;
+    }
+
+    #loading {
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 3em;
+    }
+
+    .dot {
+        animation: blink 2s infinite;
+        margin: 0 5px;
+        color: #333;
+    }
+
+    /* Animasi berkedip untuk titik-titik loading */
+    @keyframes blink {
+
+        0%,
+        100% {
+            opacity: 0.2;
+        }
+
+        50% {
+            opacity: 1;
+        }
+    }
+
+    /* Menambahkan jeda antar titik */
+    .dot:nth-child(1) {
+        animation-delay: 0s;
+    }
+
+    .dot:nth-child(2) {
+        animation-delay: 0.2s;
+    }
+
+    .dot:nth-child(3) {
+        animation-delay: 0.4s;
+    }
+
+    .dot:nth-child(4) {
+        animation-delay: 0.6s;
+    }
+
+    .dot:nth-child(5) {
+        animation-delay: 0.8s;
+    }
+
+    .dot:nth-child(6) {
+        animation-delay: 0.10s;
+    }
+
+    // ================== Main =========================//
+    .main {
+        // display: none;
+        width: 100%;
+        height: 100vh;
+
+        display: flex;
+        justify-content: center;
+        align-items: end;
+
+        .container {
+            width: 90%;
+            height: 80%;
+            // height: 75%;
+            background-color: $green;
+            border-radius: 30px 30px 0px 0px;
+
+            .logo {
+                width: 300px;
+                position: absolute;
+                z-index: 1;
+                top: 0px;
+            }
+
+            .menu {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 20px;
+
+                button {
+                    width: 30%;
+                    padding: 20px;
+                    background-color: $button;
+                    color: white;
+                    border-radius: 20px;
+                    font-size: 2rem;
+                    border-color: $button;
+                }
+
+                #slogan {
+                    position: absolute;
+                    bottom: 20px;
+                    color: white;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    // ========== BELI JAMU ========= //
+    .container {
+        .header {
+            box-sizing: border-box;
+            width: 100%;
+            height: 8%;
+            background-color: $green;
+            display: flex;
+            align-items: center;
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+        }
+
+        .cards {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 20px;
+            flex-wrap: wrap;
+
+            .card {
+                width: 20%;
+                height: 150px;
+                background-color: $green;
+                border-radius: 10px;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                padding: 10px 10px;
+                gap: 10px;
+                padding: 0px 10px;
+
+                .profile_jamu {
+                    position: relative;
+                    width: 160px;
+                    height: 120px;
+                    border-radius: 10px;
+                    overflow: hidden;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-left: 8px;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+
+                h3,
+                p {
+                    margin: 0px;
+                    padding: 0px;
+                    color: white;
+                    padding: 2px 0px;
+                }
+
+                .button {
+                    display: flex;
+                    align-items: center;
+                    width: 60px;
+                    height: 100px;
+                    padding: 10px;
+                    text-align: center;
+                    border-left: 2px solid rgba(59, 59, 59, 0.5);
+                }
+            }
+        }
+    }
+
+    // ========== Konsultasi ========= //
+    .container {
+        .quesion {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+
+            .box {
+                width: 90%;
+                height: 80%;
+                background-color: $green;
+                padding: 20px;
+                box-sizing: border-box;
+                border-radius: 10px;
+
+                h3 {
+                    color: white;
+                    margin-bottom: 50px;
+                }
+
+                hr {
+                    margin: 15px auto;
+                    color: white;
+                    width: 70%;
+                }
+
+                p {
+                    color: white;
+                    width: 50%;
+                    margin: auto;
+                }
+
+                form {
+                    .item {
+                        box-sizing: border-box;
+                        padding: 20px;
+                        display: grid;
+                        justify-content: center;
+                        grid-template-columns: repeat(4, 1fr);
+                        margin: auto;
+                        gap: 20px;
+                        color: white;
+
+                        .item_question {
+                            background-color: $button;
+                            padding: 10px;
+                            display: flex;
+                            gap: 10px;
+                            justify-content: start;
+                            width: 250px;
+                            height: 20px;
+
+                            input[type="checkbox"] {
+                                transform: scale(2);
+                                margin-right: 5px;
+                            }
+                        }
+                    }
+                }
+
+                .button {
+                    background-color: $button;
+                    padding: 10px;
+                    width: 90%;
+                    height: 50px;
+                    margin: 60px 0px 40px 0px;
+                    color: white;
+                    border-color: white;
+                }
+            }
+        }
+    }
+
+    // ========== diagnosa ========= //
+    .container {
+        width: 100%;
+
+        .detail_quesion {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            gap: 10px;
+            color: white;
+
+            .box {
+                width: 90%;
+                height: 80%;
+                background-color: $green;
+                padding: 20px;
+                box-sizing: border-box;
+                border-radius: 10px;
+
+                hr {
+                    color: white;
+                }
+
+                hr {
+                    margin: 15px auto;
+                    width: 70%;
+                }
+            }
+
+            form {
+                width: 90%;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                .item {
+                    width: 100%;
+                    background-color: $green;
+                    border-radius: 10px;
+                    box-sizing: border-box;
+                    padding: 20px;
+
+                    h3,
+                    p {
+                        padding: 0px;
+                        margin: 0px;
+                    }
+
+                    .no {
+                        display: flex;
+                        justify-content: center;
+                        gap: 10px;
+                        margin-bottom: 10px;
+                    }
+
+                    .detail {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        box-sizing: border-box;
+                        gap: 20px;
+                        margin-left: 40px;
+
+                        input[type="checkbox"] {
+                            transform: scale(1.5);
+                            margin-right: 5px;
+                        }
+                    }
+                }
+
+                .button {
+                    background-color: $button;
+                    padding: 10px;
+                    width: 100%;
+                    height: 50px;
+                    margin: 20px 0px 40px 0px;
+                    color: white;
+                    border-color: white;
+                    font-size: 30px;
+                    border-radius: 10px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+        }
+    }
+
+    // ========== Hasil ========= //
+    .container {
+        .hasil {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            gap: 10px;
+            color: white;
+
+            .box {
+                width: 90%;
+                height: 80%;
+                background-color: $green;
+                padding: 20px;
+                box-sizing: border-box;
+                border-radius: 10px;
+
+                hr {
+                    color: white;
+                }
+
+                table {
+                    border-color: white;
+                    border: solid 1px;
+                    margin: auto;
+                }
+
+                #p {
+                    width: 50%;
+                    margin: auto;
+                }
+
+                .loading-spinner {
+                    display: inline-block;
+                    width: 16px;
+                    height: 16px;
+                    border: 2px solid #f3f3f3;
+                    border-radius: 50%;
+                    border-top: 2px solid #3498db;
+                    animation: spin 1s linear infinite;
+                    margin-right: 5px;
+                }
+
+                @keyframes spin {
+                    0% { transform: rotate(0deg); }
+                    100% { transform: rotate(360deg); }
+                }
+
+                #buatJamuBtn{
+                    width: 90%;
+                    height: 50px;
+                    background-color: $button;
+                    border-radius: 10px;
+                    border-color: $button;
+                    color: white;
+                    margin-top: 20px;
+                    font-size: 15px;
+                }
+
+                .loading-content {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                #statusText {
+                    margin-top: 10px;
+                    font-size: 20px;
+                    color: white;
+                    display: none; /* Mulai dengan teks tersembunyi */
+                }
+            }
+        }
+    }
+
+}
+
+@media (max-width: 480px) {
+    body {
+        .logo {
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70%;
+        }
+
+        .hijau {
+            width: 100%;
+            height: 45%;
+            background-color: $green;
+        }
+
+        .putih {
+            width: 100%;
+            height: 55%;
+            background-color: $white;
+        }
+
+        #loading {
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+        }
+
+        #slogan {
+            bottom: 60px;
+        }
+
+        .main {
+            .container {
+                .menu {
+                    button {
+                        width: 60%;
+                        padding: 20px;
+                        background-color: $button;
+                        color: white;
+                        border-radius: 20px;
+                        font-size: 20px;
+                        border-color: $button;
+                    }
+
+                    #slogan {
+                        bottom: 60px;
+                    }
+                }
+            }
+        }
+
+
+        // ========== BELI JAMU ========= //
+        .container {
+            .cards {
+                .card {
+                    width: 90%;
+                }
+            }
+        }
+
+        // ========== Konsultasi ========= //
+        .container {
+            .quesion {
+                .box {
+                    p {
+                        color: white;
+                        width: 100%;
+                        margin: auto;
+                    }
+
+                    hr {
+                        margin: 15px auto;
+                        color: white;
+                        width: 100%;
+                    }
+
+                    form {
+                        .item {
+                            width: 100%;
+                            grid-template-columns: repeat(1, 1fr);
+                        }
+                    }
+
+                    .button {
+                        width: 270px;
+                        margin: 20px 0px;
+                    }
+                }
+            }
+        }
+
+        // ========== diagnosa ========= //
+        .container {
+            .detail_quesion {
+                .box {
+                    hr {
+                        width: 95%;
+                    }
+                }
+
+                form{
+                    .item {
+                    .no {
+                        justify-content: start;
+                        margin-bottom: 10px;
+
+                        p {
+                            text-align: start;
+                        }
+                    }
+
+                    .detail {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: start;
+                        align-items: start;
+                        margin-left: 25px;
+                    }
+                }
+                }
+                
+            }
+        }
+
+        // ========== Hasil ========= //
+        .container {
+            .hasil {
+                .box {
+                    .khasiat {
+                        #p {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
