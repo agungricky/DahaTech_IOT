@@ -117,10 +117,10 @@
                 const persentase = @json($presentase);
 
                 Object.keys(persentase).forEach(key => {
-                    persentase[key] = parseFloat(persentase[key]).toFixed(1);
+                    persentase[key] = Math.round(parseFloat(persentase[key]) * 10) / 10;
                 });
 
-                persentase['Status'] = 'Proses';
+                persentase['status'] = 1;
                 console.log(persentase);
 
                 $(this).html(
@@ -134,7 +134,7 @@
                 });
 
                 $.ajax({
-                    url: 'https://dahatech-5f699-default-rtdb.asia-southeast1.firebasedatabase.app/.json',
+                    url: 'https://dahatech-5f699-default-rtdb.asia-southeast1.firebasedatabase.app/jamu.json',
                     type: 'PATCH',
                     contentType: 'application/json',
                     data: JSON.stringify(persentase),
@@ -156,12 +156,12 @@
             function checkStatusInFirebase() {
                 const interval = setInterval(function() {
                     $.ajax({
-                        url: 'https://dahatech-5f699-default-rtdb.asia-southeast1.firebasedatabase.app/Status.json',
+                        url: 'https://dahatech-5f699-default-rtdb.asia-southeast1.firebasedatabase.app/jamu/status.json',
                         type: 'GET',
                         success: function(response) {
                             console.log('Status saat ini:', response);
 
-                            if (response === 'Selesai') {
+                            if (response === 0) {
                                 clearInterval(interval);
                                 $('#buatJamuBtn').html('Buat Lagi').prop('disabled', false);
                                 $('#statusText').text('Proses Selesai, Silahkan menikmati');
@@ -169,7 +169,7 @@
                                 document.getElementById('statusText').scrollIntoView({
                                     behavior: 'smooth'
                                 });
-                            } else if (response === 'Proses') {
+                            } else if (response === 1) {
                                 $('#buatJamuBtn').html(
                                         '<div class="loading-content"><div class="loading-spinner"></div> Proses</div>'
                                         )

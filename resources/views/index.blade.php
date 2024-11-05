@@ -1,7 +1,7 @@
 @extends('main')
 @section('content')
     <div class="container" id="loading_sc">
-        <img class="logo" src="{{ asset('public/Assets/img/—Pngtree—nature herbal logo_8422875.png') }}" alt="logo">
+        <img class="logo" src="{{ asset('public/Assets/img/logo.png') }}" alt="logo">
         <div id="loading">
             <span class="dot">•</span>
             <span class="dot">•</span>
@@ -18,7 +18,7 @@
 
     <div class="main" style="display: none;">
         <div class="container">
-            <img class="logo" src="{{ asset('/Assets/img/—Pngtree—nature herbal logo_8422875.png') }}" alt="">
+            <img class="logo" src="{{ asset('/Assets/img/logo.png') }}" alt="">
 
             <div class="menu">
                 <button id="btnKonsultasi"><i class="bi bi-headset"></i> Konsultasi</button>

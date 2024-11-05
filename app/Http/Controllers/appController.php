@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class appController extends Controller
 {
@@ -11,7 +12,16 @@ class appController extends Controller
      */
     public function index()
     {
-        //
+        $firebaseData = [
+            'jahe' => 0,
+            'kencur' => 0,
+            'kunyitAsem' => 0,
+            'temuLawak' => 0,
+            'status' => 0
+        ];
+
+        Http::patch('https://dahatech-5f699-default-rtdb.asia-southeast1.firebasedatabase.app/jamu.json', $firebaseData);
+        return view('index');
     }
 
     /**
@@ -59,10 +69,10 @@ class appController extends Controller
         }
 
         $banyak_data = [
-            'Jahe' => isset($data['Jahe']) ? count($data['Jahe']) : 0,
-            'Beras Kencur' => isset($data['Beras_Kencur']) ? count($data['Beras_Kencur']) : 0,
-            'Temu lawak' => isset($data['Temu_lawak']) ? count($data['Temu_lawak']) : 0,
-            'Kunir asem' => isset($data['Kunir_asem']) ? count($data['Kunir_asem']) : 0,
+            'jahe' => isset($data['Jahe']) ? count($data['Jahe']) : 0,
+            'kencur' => isset($data['Beras_Kencur']) ? count($data['Beras_Kencur']) : 0,
+            'temuLawak' => isset($data['Temu_lawak']) ? count($data['Temu_lawak']) : 0,
+            'kunyitAsem' => isset($data['Kunir_asem']) ? count($data['Kunir_asem']) : 0,
         ];
 
         $penjumlahan_data = [];
@@ -88,6 +98,7 @@ class appController extends Controller
                 $penyakit_sementara[] = $value;
             }
         }
+
         // dd($presentase);
         return view('hasil', compact('presentase', 'penyakit'));
     }

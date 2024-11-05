@@ -8,7 +8,8 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::view('/', 'main');
-Route::view('/', 'index');
+Route::get('/', [appController::class, 'index']);
+// Route::view('/', 'index');
 Route::view('/beliJamu', 'paketJamu');
 Route::view('/konsultasi', 'konsultasi');
 Route::view('/diagnosa', 'diagnosa');
