@@ -23,6 +23,7 @@
             <div class="menu">
                 <button id="btnKonsultasi"><i class="bi bi-headset"></i> Konsultasi</button>
                 <button id="btnBeliJamu"><i class="bi bi-cart-check-fill"></i> Beli Jamu</button>
+                <button id="btnAbout"><i class="bi bi-info-circle-fill"></i> About</button>
                 <p id="slogan">Temukan solusi kesehatan anda dengan <br> jamu tradsional</p>
             </div>
         </div>

@@ -13,4 +13,8 @@ $(document).ready(function () {
     $('#btnBeliJamu').click(function () {
         window.location.href = 'beliJamu';
     });
+
+    $('#btnAbout').click(function () {
+        window.location.href = 'about';
+    });
 });

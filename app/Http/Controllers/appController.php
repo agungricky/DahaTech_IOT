@@ -48,6 +48,22 @@ class appController extends Controller
         return view('diagnosa', compact('keluhan_penyakit'));
     }
 
+    public function belijamu(Request $request)
+    {
+        $firebaseData = [
+            'jahe' => $request->jahe,
+            'kencur' => $request->kencur,
+            'kunyitAsem' => $request->kunyitAsem,
+            'temuLawak' => $request->temuLawak,
+            'status' => 1
+        ];
+
+        $success = "Behasil di buat silahkan tunggu";
+
+        Http::patch('https://dahatech-5f699-default-rtdb.asia-southeast1.firebasedatabase.app/jamu.json', $firebaseData);
+        return view('paketJamu', compact('success'));
+    }
+
     public function diagnosa(Request $request)
     {
         $app = $request->except('_token');
