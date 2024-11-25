@@ -51,14 +51,14 @@ class appController extends Controller
     public function belijamu(Request $request)
     {
         $firebaseData = [
-            'jahe' => $request->jahe,
-            'kencur' => $request->kencur,
-            'kunyitAsem' => $request->kunyitAsem,
-            'temuLawak' => $request->temuLawak,
+            'jahe' => (int) $request->jahe,
+            'kencur' => (int) $request->kencur,
+            'kunyitAsem' => (int) $request->kunyitAsem,
+            'temuLawak' => (int) $request->temuLawak,
             'status' => 1
         ];
 
-        $success = "Behasil di buat silahkan tunggu";
+        $success = "Berhasil di buat silahkan tunggu";
 
         Http::patch('https://dahatech-5f699-default-rtdb.asia-southeast1.firebasedatabase.app/jamu.json', $firebaseData);
         return view('paketJamu', compact('success'));
